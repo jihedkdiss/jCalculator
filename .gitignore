@@ -27,3 +27,6 @@ replay_pid*
 *.xml
 *.mf
 nbproject/
+build/
+nbproject/project.properties
+nbproject/project.properties
