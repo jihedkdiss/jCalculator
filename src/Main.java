@@ -1,3 +1,4 @@
+
 /**
  *
  * @author Jihed
@@ -1063,30 +1064,27 @@ public class Main extends javax.swing.JFrame {
             sum = sum + members[i];
         }
         screen.setText(sum + ""); */
-        
+
         // The following steps rely on the python eval() function
         String s = null;
 
         try {
             Process p = Runtime.getRuntime().exec("python -c \"print(eval(\"'" + screen.getText() + "'))\"");
-            
-            BufferedReader stdInput = new BufferedReader(new 
-                 InputStreamReader(p.getInputStream()));
 
-            BufferedReader stdError = new BufferedReader(new 
-                 InputStreamReader(p.getErrorStream()));
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 
             // read the output from the command
             while ((s = stdInput.readLine()) != null) {
                 screen.setText(s);
             }
-            
+
             // read any errors from the attempted command
             while ((s = stdError.readLine()) != null) {
                 System.out.println(s);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("exception happened - here's what I know: ");
             e.printStackTrace();
         }
