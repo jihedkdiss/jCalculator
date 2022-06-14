@@ -26,7 +26,5 @@ replay_pid*
 # IDE Files
 *.xml
 *.mf
-nbproject/
-build/
-nbproject/project.properties
-nbproject/project.properties
+nbproject/*
+build/*
