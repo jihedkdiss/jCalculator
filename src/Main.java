@@ -2,6 +2,9 @@
  *
  * @author Jihed
  */
+
+import java.io.*;
+
 public class Main extends javax.swing.JFrame {
 
     /**
@@ -95,18 +98,18 @@ public class Main extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -114,8 +117,9 @@ public class Main extends javax.swing.JFrame {
 
         screen.setFont(new java.awt.Font("Montserrat", 0, 36)); // NOI18N
         screen.setForeground(new java.awt.Color(51, 51, 51));
-        screen.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        screen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         screen.setText("35+7");
+        screen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -813,6 +817,11 @@ public class Main extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(250, 192, 94));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("=");
+        jLabel28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel28MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -1023,6 +1032,65 @@ public class Main extends javax.swing.JFrame {
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         screen.setText(screen.getText() + "9");
     }//GEN-LAST:event_jLabel19MouseClicked
+
+    private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
+        // Case of simple calculations (addition/substraction):
+        // This is a custom implementation of the famous eval
+        /* String firstCharacter = screen.getText().charAt(0) + "";
+        String equation = screen.getText();
+        if(firstCharacter.matches("\\d"))
+            equation = "+" + screen.getText();
+        int nbOfMembers = equation.split("[+-]").length;
+        int[] members = new int[nbOfMembers];
+        int index = 0;
+        for(int i = 0; i < nbOfMembers; i++) {
+            boolean negative = false;
+            String thisNumber = "";
+            if(equation.charAt(index) == '-') negative = true;
+            index++;
+            while((equation.charAt(index) != '+' || equation.charAt(index) != '-') && index < equation.length()) {
+                thisNumber = thisNumber + equation.charAt(index);
+                if(index + 1 < equation.length())
+                    index++;
+                else
+                    break;
+            }
+            if(negative) members[i] = -1 * Integer.parseInt(thisNumber);
+            else members[i] = Integer.parseInt(thisNumber);
+        }
+        int sum = 0;
+        for (int i = 0; i < members.length; i++) {
+            sum = sum + members[i];
+        }
+        screen.setText(sum + ""); */
+        
+        // The following steps rely on the python eval() function
+        String s = null;
+
+        try {
+            Process p = Runtime.getRuntime().exec("python -c \"print(eval(\"'" + screen.getText() + "'))\"");
+            
+            BufferedReader stdInput = new BufferedReader(new 
+                 InputStreamReader(p.getInputStream()));
+
+            BufferedReader stdError = new BufferedReader(new 
+                 InputStreamReader(p.getErrorStream()));
+
+            // read the output from the command
+            while ((s = stdInput.readLine()) != null) {
+                screen.setText(s);
+            }
+            
+            // read any errors from the attempted command
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+        }
+        catch (IOException e) {
+            System.out.println("exception happened - here's what I know: ");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jLabel28MouseClicked
 
     /**
      * @param args the command line arguments
