@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jihedkdiss/jCalculator">
-    <img src="https://github.com/jihedkdiss/jCalculator/blob/main/Pictures/Logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/jihedkdiss/jCalculator/blob/main/Pictures/Logo.png" alt="Logo" width="140" height="140">
   </a>
 
   <h3 align="center">jCalculator</h3>
