@@ -101,7 +101,7 @@ Distributed under the GNU General Public License. See `LICENSE` for more informa
 <!-- CONTACT -->
 ## Contact
 
-Jihed Kdiss - [@thisisjihedkdiss](https://facebook.com/jiokdiss) - jihedkdiss@outlook.com
+Jihed Kdiss - [@jiokdiss](https://facebook.com/jiokdiss) - jihedkdiss@outlook.com
 
 Project Link: [https://github.com/jihedkdiss/jCalculator](https://github.com/jihedkdiss/jCalculator)
 
