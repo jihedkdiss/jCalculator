@@ -68,7 +68,7 @@ You can support the development of jCalculator. Star this repository! 🌟
 
 ## Usage
 1. Download the code.
-2. Compile and Run (make sure you have JDK and JRE installed)
+2. Compile and Run (make sure you have JDK/JRE & Python installed and configured to run from the command line)
 3. Enjoy calculating! :)
 
 <!-- ROADMAP -->
