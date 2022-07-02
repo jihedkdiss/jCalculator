@@ -59,6 +59,11 @@
 The app relies mainly on the eval() python function to do the maths although I'm working on implementing this feature in Java.
 You can support the development of jCalculator. Star this repository! 🌟
 
+### Features
+
+* Very clean and modern interface with easy user experience
+* A nice logo that will brighten your desktop ;)
+* Different ways to handle calculations (either Python's eval() or my own Java implemenation)
 
 ### Built With
 
