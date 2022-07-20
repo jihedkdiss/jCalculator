@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jihedkdiss/jCalculator">
-    <img src="https://github.com/jihedkdiss/jCalculator/blob/main/Pictures/Logo.png" alt="Logo" width="140" height="140">
+    <img src="Pictures/Logo.png" alt="Logo" width="140" height="140">
   </a>
 
   <h3 align="center">jCalculator</h3>
@@ -51,7 +51,7 @@
 
 <p align="center">
   <a href="https://github.com/jihedkdiss/jCalculator">
-    <img src="https://raw.githubusercontent.com/jihedkdiss/jCalculator/main/Pictures/Screenshot.PNG" alt="Screenshot">
+    <img src="Pictures/Screenshot.PNG" alt="Screenshot">
   </a>
 </p>
 
