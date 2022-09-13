@@ -3,6 +3,7 @@
  *
  * @author Jihed
  */
+import java.awt.Toolkit;
 import java.io.*;
 import java.awt.geom.RoundRectangle2D;
 
@@ -15,6 +16,7 @@ public class Main extends javax.swing.JFrame {
         setLayout(null);
         setUndecorated(true);
         setShape(new RoundRectangle2D.Double(0, 0, 366, 616, 25, 25));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
         initComponents();
     }
 
@@ -89,7 +91,6 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("jCalculator");
-        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(238, 99, 82));
@@ -1232,7 +1233,7 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
